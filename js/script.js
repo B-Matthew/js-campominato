@@ -23,7 +23,7 @@ function campoMinato () {
 var openApp = document.getElementById("openApp");
 
 openApp.addEventListener("click", function() {
-
+  var points = document.getElementById("points");
   var arrRnd = [];
   for (var i = 0; i < 16; i++) {
 
@@ -49,7 +49,9 @@ openApp.addEventListener("click", function() {
       arrUser.push(userNums);
       if (arrRnd.includes(userNums)) {
 
-        console.log("Hai scelto un numero già uscito!!" , " Il tuo punteggio è di " + (arrUser.length - 1));
+
+        points.innerHTML = "Hai scelto un numero già uscito!!" + " Il tuo punteggio è di " + (arrUser.length - 1);
+        openApp.innerHTML = "Rigioca";
         break
       }
     }else {
@@ -59,7 +61,8 @@ openApp.addEventListener("click", function() {
     }
   }
   if (arrUser.length == 84)  {
-    console.log("SEI UN DRAGO, PUNTEGGIO MASSIMO")
+
+    points.innerHTML = "SEI UN DRAGO, PUNTEGGIO MASSIMO";
   }
   console.log(arrUser);
 })

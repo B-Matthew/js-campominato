@@ -6,6 +6,7 @@ function arrayRandom (min,max) {
   var openApp = document.getElementById("openApp");
   openApp.addEventListener("click", function() {
   var lvl = prompt("Inserisci il livello di difficoltà scegliendo tra facile , medio , difficile");
+  var points = document.getElementById("points");
 
   if (lvl == "facile") {
 
@@ -46,7 +47,8 @@ function arrayRandom (min,max) {
       arrUser.push(userNums);
       if (arrRnd.includes(userNums)) {
 
-        console.log("Hai scelto un numero già uscito!!" , " Il tuo punteggio è di " + (arrUser.length - 1));
+        points.innerHTML = "Hai scelto un numero già uscito!!" + " Il tuo punteggio è di " + (arrUser.length - 1);
+        openApp.innerHTML = "Rigioca";
         break
       }
     }else {
@@ -56,7 +58,9 @@ function arrayRandom (min,max) {
     }
   }
   if (arrUser.length == 84)  {
-    console.log("SEI UN DRAGO, PUNTEGGIO MASSIMO")
+
+    points.innerHTML = "SEI UN DRAGO, PUNTEGGIO MASSIMO";
+    openApp.innerHTML = "Rigioca";
   }
 
   console.log(arrUser);

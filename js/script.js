@@ -22,7 +22,7 @@
 
 
 
-function campoMinato() {
+function campoMinato () {
   arrRnd = [];
 
   for (var i = 0; i < 16; i++) {
@@ -36,7 +36,7 @@ function campoMinato() {
       i--;
     }
   }
-  return console.log(arrRnd);
+    console.log(arrRnd);
 
   var arrUser = [];
 
@@ -61,7 +61,11 @@ function campoMinato() {
   if (arrUser.length == 84)  {
     console.log("SEI UN DRAGO, PUNTEGGIO MASSIMO")
   }
-  return console.log(arrUser);
+   console.log(arrUser);
 }
 
-// campoMinato();
+
+
+
+
+campoMinato();

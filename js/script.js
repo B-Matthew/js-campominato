@@ -22,7 +22,7 @@
 
 
 
-function arrayRandom () {
+function campoMinato() {
   arrRnd = [];
 
   for (var i = 0; i < 16; i++) {
@@ -37,9 +37,7 @@ function arrayRandom () {
     }
   }
   return console.log(arrRnd);
-}
 
-function campoMinato () {
   var arrUser = [];
 
   for (var i = 0; i < 84; i++) {
@@ -66,5 +64,4 @@ function campoMinato () {
   return console.log(arrUser);
 }
 
-arrayRandom();
-campoMinato();
+// campoMinato();

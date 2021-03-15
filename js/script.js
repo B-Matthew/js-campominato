@@ -21,7 +21,7 @@
 // Ricordatevi che se non sappiamo quante volte dobbiamo fare una cosa ci serve…
 
 
-// generare 16 numeri casuali diversi da loro
+
 function arrayRandom () {
   arrRnd = [];
 
@@ -39,11 +39,6 @@ function arrayRandom () {
   return console.log(arrRnd);
 }
 
-arrayRandom();
-
-// chiedere all’utente (100 - 16 = 84) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
-// L’utente non può inserire più volte lo stesso numero.
-
 function campoMinato () {
   var arrUser = [];
 
@@ -54,9 +49,9 @@ function campoMinato () {
     if (!arrUser.includes(userNums)) {
 
       arrUser.push(userNums);
-      if (arrUser[userNums] == arrRnd[rndNums]) {
+      if (arrRnd.includes(userNums)) {
 
-        console.log("Hai perso" , " il tuo punteggio è di " + (arrUser.length - 1));
+        console.log("Hai scelto un numero già uscito!!" , " Il tuo punteggio è di " + (arrUser.length - 1));
         break
       }
     }else {
@@ -65,9 +60,11 @@ function campoMinato () {
       i--;
     }
   }
+  if (arrUser.length == 84)  {
+    console.log("SEI UN DRAGO, PUNTEGGIO MASSIMO")
+  }
   return console.log(arrUser);
 }
 
+arrayRandom();
 campoMinato();
-
-// Se il numero è presente nella lista dei numeri generati, la partita termina, altrimenti si continua chiedendo all’utente un altro numero.

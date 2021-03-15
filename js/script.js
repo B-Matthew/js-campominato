@@ -19,15 +19,15 @@
 // Proviamo prima con pochi numeri, inserire 86 numeri ogni volta potrebbe essere un po’ scocciante :occhiolino:
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 // Ricordatevi che se non sappiamo quante volte dobbiamo fare una cosa ci serve…
-
-
-
 function campoMinato () {
-  arrRnd = [];
+var openApp = document.getElementById("openApp");
 
+openApp.addEventListener("click", function() {
+
+  var arrRnd = [];
   for (var i = 0; i < 16; i++) {
 
-    rndNums = Math.ceil(Math.random() * 100);
+    var rndNums = Math.ceil(Math.random() * 100);
     if (!arrRnd.includes(rndNums)) {
 
       arrRnd.push(rndNums);
@@ -36,7 +36,7 @@ function campoMinato () {
       i--;
     }
   }
-    console.log(arrRnd);
+  console.log(arrRnd);
 
   var arrUser = [];
 
@@ -61,11 +61,8 @@ function campoMinato () {
   if (arrUser.length == 84)  {
     console.log("SEI UN DRAGO, PUNTEGGIO MASSIMO")
   }
-   console.log(arrUser);
+  console.log(arrUser);
+})
 }
-
-
-
-
 
 campoMinato();

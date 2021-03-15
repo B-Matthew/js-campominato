@@ -2,6 +2,9 @@
 
 
 function arrayRandom (min,max) {
+
+  var openApp = document.getElementById("openApp");
+  openApp.addEventListener("click", function() {
   var lvl = prompt("Inserisci il livello di difficoltà scegliendo tra facile , medio , difficile");
 
   if (lvl == "facile") {
@@ -57,6 +60,7 @@ function arrayRandom (min,max) {
   }
 
   console.log(arrUser);
+})
 }
 
-// arrayRandom();
+arrayRandom();

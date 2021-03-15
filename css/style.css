@@ -1,11 +1,36 @@
 body {
   margin: 0;
   padding: 0;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;min-height: 100vh;
   background-color: #031321;
   font-family: consolas;
+}
+
+h1 {
+  color: white;
+  font-size: 80px;
+  animation: titolo linear 10s infinite;
+}
+
+@keyframes titolo {
+  0% {
+    color: blue;
+  }
+  25% {
+    color: red;
+  }
+  50% {
+    color:yellow;
+  }
+  75% {
+    color: green;
+  }
+  100% {
+    color: blue;
+  }
 }
 
 h2 {

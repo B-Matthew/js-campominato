@@ -1,25 +1,22 @@
 
 
 
-function arrayRandom (min,max) {
+function arrayRandom () {
 
   var openApp = document.getElementById("openApp");
-  openApp.addEventListener("click", function() {
   var lvl = prompt("Inserisci il livello di difficoltà scegliendo tra facile , medio , difficile");
   var points = document.getElementById("points");
 
   if (lvl == "facile") {
 
-
-    var max = 100;
+    max = 100;
   }else if (lvl == "medio") {
 
 
-    var max = 80;
+    max = 80;
   }else {
 
-
-    var max = 50;
+    max = 50;
   }
   arrRnd = [];
 
@@ -34,10 +31,11 @@ function arrayRandom (min,max) {
       i--;
     }
   }
-
   console.log(arrRnd);
-  var arrUser = [];
+}
 
+function campoMinato() {
+  var arrUser = [];
   for (var i = 0; i < (max - 16); i++) {
 
     var userNums = parseInt(prompt("Inserire un numero tra 1 e " + max));
@@ -64,7 +62,9 @@ function arrayRandom (min,max) {
   }
 
   console.log(arrUser);
-})
 }
 
-arrayRandom();
+openApp.addEventListener("click", function() {
+  arrayRandom();
+  campoMinato();
+})

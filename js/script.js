@@ -20,11 +20,8 @@
 // Le validazioni e i controlli possiamo farli anche in un secondo momento.
 // Ricordatevi che se non sappiamo quante volte dobbiamo fare una cosa ci serve…
 function campoMinato () {
-var openApp = document.getElementById("openApp");
 
-openApp.addEventListener("click", function() {
-  var points = document.getElementById("points");
-  var arrRnd = [];
+  arrRnd = [];
   for (var i = 0; i < 16; i++) {
 
     var rndNums = Math.ceil(Math.random() * 100);
@@ -37,9 +34,12 @@ openApp.addEventListener("click", function() {
     }
   }
   console.log(arrRnd);
+}
 
+function arrayUser () {
   var arrUser = [];
-
+  var openApp = document.getElementById("openApp");
+  var points = document.getElementById("points");
   for (var i = 0; i < 84; i++) {
 
     var userNums = parseInt(prompt("Inserire un numero tra 1 e 100"));
@@ -48,7 +48,6 @@ openApp.addEventListener("click", function() {
 
       arrUser.push(userNums);
       if (arrRnd.includes(userNums)) {
-
 
         points.innerHTML = "Hai scelto un numero già uscito!!" + " Il tuo punteggio è di " + (arrUser.length - 1);
         openApp.innerHTML = "Rigioca";
@@ -64,8 +63,11 @@ openApp.addEventListener("click", function() {
 
     points.innerHTML = "SEI UN DRAGO, PUNTEGGIO MASSIMO";
   }
+
   console.log(arrUser);
-})
 }
 
-campoMinato();
+openApp.addEventListener("click", function() {
+  campoMinato();
+  arrayUser();
+})
